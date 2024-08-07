@@ -1,18 +1,15 @@
 package com.program.shop_clothes.domain;
 
+import com.program.shop_clothes.domain.base.BaseDomainAudit;
+import lombok.*;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
 
-@AllArgsConstructor
-@Data
-@Builder
-public class Review {
+@Getter
+@Setter
+public class Review extends BaseDomainAudit {
 
-    private String id;
     private User user;
-    private OrderDetail orderDetail;
+    private Product product;
     private String content;
     private int star;
 

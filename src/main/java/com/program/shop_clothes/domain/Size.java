@@ -1,19 +1,14 @@
 package com.program.shop_clothes.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
+import com.program.shop_clothes.domain.base.BaseDomain;
+import lombok.*;
 
 import java.util.List;
 
-@AllArgsConstructor
-@Data
-@Builder
-public class Size {
+@Getter
+@Setter
+public class Size extends BaseDomain {
 
-    private String id;
     private String name;
     private List<Product> products;
-    private int quantityProduct;
-
 }

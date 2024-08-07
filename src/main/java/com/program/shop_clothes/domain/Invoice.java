@@ -1,25 +1,17 @@
 package com.program.shop_clothes.domain;
 
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
+import com.program.shop_clothes.domain.base.BaseDomainAudit;
+import lombok.*;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
-@AllArgsConstructor
-@Data
-@Builder
-public class Invoice {
+@Getter
+@Setter
+public class Invoice extends BaseDomainAudit {
 
-    private String id;
     private Order order;
-    private String vnpResponseCode;
-    private BigDecimal vnpAmount;
-    private String vnpBankCode;
-    private String vnpCardType;
-    private String vnpOrderInfo;
-    private LocalDate vnpPayDate;
+    private BigDecimal amount;
+    private PaymentMethod paymentMethod;
+    private InvoiceStatus invoiceStatus;
 
 }

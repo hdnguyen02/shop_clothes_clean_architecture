@@ -5,5 +5,5 @@ import com.program.shop_clothes.domain.Product;
 import java.math.BigDecimal;
 
 public interface UpdateProductUseCase {
-    Product execute(String name, String alias, BigDecimal price, String description);
+    Product execute(String idProduct, String name, String alias, BigDecimal price, String description);
 }

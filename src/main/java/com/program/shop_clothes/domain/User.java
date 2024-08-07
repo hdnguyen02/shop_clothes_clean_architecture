@@ -1,16 +1,14 @@
 package com.program.shop_clothes.domain;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.List;
 
-@AllArgsConstructor
-@Data
-@Builder
+
+@Getter
+@Setter
 public class User {
 
     private String username;
@@ -23,7 +21,6 @@ public class User {
     private List<Role> roles;
     private List<CartItem> cartItems;
     private List<Order> orders;
-    private List<Invoice> invoices;
-    private LocalDate timestamp;
+    private boolean isEnabled;
 
 }

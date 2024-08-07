@@ -1,16 +1,13 @@
 package com.program.shop_clothes.domain;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
+import com.program.shop_clothes.domain.base.BaseDomain;
+import lombok.*;
 
-@AllArgsConstructor
-@Data
-@Builder
-public class CartItem {
+@Getter
+@Setter
+public class CartItem extends BaseDomain {
 
-    private String id;
     private int quantityProduct;
     private ProductSize productSize;
     private User user;

@@ -1,22 +1,20 @@
 package com.program.shop_clothes.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
+import com.program.shop_clothes.domain.base.BaseDomainAudit;
+import lombok.*;
 
-import java.time.LocalDate;
 import java.util.List;
 
-@AllArgsConstructor
-@Data
-@Builder
-public class Order {
+@Getter
+@Setter
+public class Order extends BaseDomainAudit {
 
-    private String id;
     private List<OrderDetail> orderDetails;
     private User user;
-    private LocalDate timestamp;
     private String address;
+    private String email;
+    private String phone;
+    private List<Invoice> invoices;
     private List<OrderStatusHistory> orderStatusHistories;
 
 }

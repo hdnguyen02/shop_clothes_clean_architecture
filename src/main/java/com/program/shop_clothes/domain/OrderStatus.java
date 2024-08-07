@@ -6,5 +6,9 @@ public enum OrderStatus {
     SHIPPED,
     DELIVERED,
     CANCELED,
-    RETURNED
+    REQUESTED_RETURN,
+    APPROVED_RETURN,
+    REJECTED_RETURN,
+    RETURNED,
+    REFUNDED
 }

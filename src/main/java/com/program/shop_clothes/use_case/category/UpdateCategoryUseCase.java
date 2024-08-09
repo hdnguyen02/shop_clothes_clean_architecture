@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface UpdateCategoryUseCase {
 
-    Category execute(String idCategory, String name, String alias, String description, List<String> idProduct);
+    Category execute(String idCategory, String name, String alias, String description, List<String> idProducts);
 
 }

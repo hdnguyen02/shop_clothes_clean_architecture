@@ -2,38 +2,42 @@ package com.program.shop_clothes.infrastructure.entity.base;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 
 @MappedSuperclass
 @Getter
 @Setter
+@ToString
 public abstract class BaseEntityAudit extends BaseEntity implements Serializable {
-
 
     @Column(updatable = false)
     private String createdBy;
 
     @Column(updatable = false)
-    private LocalDate createdAt;
+    private LocalDateTime createdAt;
 
     private String updatedBy;
-    private LocalDate updatedAt;
+    private LocalDateTime updatedAt;
+
 
     @Override
+    @PrePersist
     void onPrePersist() {
         super.onPrePersist();
-        this.createdAt = LocalDate.now();
+        this.createdAt = LocalDateTime.now();
     }
 
     @PreUpdate
     void onPreUpdate() {
-        this.updatedAt = LocalDate.now();
+        this.updatedAt = LocalDateTime.now();
     }
 
 }

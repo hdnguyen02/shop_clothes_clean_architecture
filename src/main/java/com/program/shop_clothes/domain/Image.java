@@ -8,5 +8,4 @@ import lombok.*;
 @Setter
 public class Image extends BaseDomain {
     private String url;
-    private Product product;
 }

@@ -12,12 +12,14 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
+@ToString
 public class ProductEntity extends BaseEntityAudit {
 
-    @Column(length = 100, nullable = false)
+    @Column(length = 100, nullable = false, unique = true)
     private String alias;
 
-    @Column(length = 100, nullable = false)
+    @Column(length = 100, nullable = false, unique = true)
     private String name;
 
     @Column(nullable = false)
@@ -26,23 +28,24 @@ public class ProductEntity extends BaseEntityAudit {
     @Column(nullable = false)
     private BigDecimal price;
 
-
-    @ManyToMany
-    @JoinTable(name = "t_products_sizes", joinColumns = @JoinColumn(name = "id_product"), inverseJoinColumns = @JoinColumn(name = "id_size"))
-    private List<SizeEntity> sizes;
-
-
-    @ManyToMany
-    @JoinTable(name = "t_products_categories", joinColumns = @JoinColumn(name = "id_product"), inverseJoinColumns = @JoinColumn(name = "id_category"))
-    private List<CategoryEntity> categories;
-
-    @OneToMany(mappedBy = "product")
-    private List<ReviewEntity> reviews;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_category")
+    private CategoryEntity category;
 
     @OneToMany(mappedBy = "product")
     private List<ImageEntity> images;
 
     @Column(nullable = false)
     private boolean isEnabled;
+
+    public ProductEntity(String id) {
+        setId(id);
+    }
+
+
+    @PrePersist
+    public void prePersist() {
+        this.isEnabled = true;
+    }
 
 }

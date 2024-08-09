@@ -11,13 +11,13 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 public class SizeEntity extends BaseEntity {
 
-
-    @Column(length = 10, nullable = false)
+    @Column(length = 10, nullable = false, updatable = false, unique = true)
     private String name;
 
-    @ManyToMany
-    @JoinTable(name = "t_products_sizes", joinColumns = @JoinColumn(name = "id_size"), inverseJoinColumns = @JoinColumn(name = "id_product"))
-    private List<ProductEntity> products;
+    public SizeEntity(String id) {
+        this.setId(id);
+    }
 }

@@ -14,7 +14,7 @@ public class ImageEntity extends BaseEntity {
     @Column(nullable = false)
     private String url;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_product")
     private ProductEntity product;
 

@@ -11,6 +11,8 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
+@ToString
 public class CategoryEntity extends BaseEntityAudit {
 
     @Column(nullable = false, unique = true)
@@ -22,8 +24,11 @@ public class CategoryEntity extends BaseEntityAudit {
     @Column( nullable = false)
     private String description;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable( name = "t_products_categories", joinColumns = @JoinColumn(name = "id_category"),inverseJoinColumns = @JoinColumn(name = "id_product"))
+    @OneToMany(mappedBy = "category")
     private List<ProductEntity> products;
+
+    public CategoryEntity(String id) {
+        this.setId(id);
+    }
 
 }

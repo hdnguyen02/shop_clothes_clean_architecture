@@ -9,7 +9,6 @@ import lombok.*;
 public class Review extends BaseDomainAudit {
 
     private User user;
-    private Product product;
     private String content;
     private int star;
 

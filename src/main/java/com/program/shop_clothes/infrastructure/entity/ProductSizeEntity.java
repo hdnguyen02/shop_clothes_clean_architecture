@@ -8,6 +8,7 @@ import lombok.*;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 public class ProductSizeEntity extends BaseEntity {
 
     @ManyToOne
@@ -20,5 +21,9 @@ public class ProductSizeEntity extends BaseEntity {
 
     @Column(nullable = false)
     private int quantityProduct;
+
+    public ProductSizeEntity(String id) {
+        setId(id);
+    }
 
 }

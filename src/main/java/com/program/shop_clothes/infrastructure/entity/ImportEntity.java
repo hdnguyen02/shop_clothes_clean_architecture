@@ -11,7 +11,6 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@Builder
 public class ImportEntity extends BaseEntityAudit {
 
     @OneToMany(mappedBy = "anImport")

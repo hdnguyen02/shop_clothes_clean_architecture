@@ -10,6 +10,6 @@ import java.util.List;
 public class Import extends BaseDomainAudit {
 
     private List<ImportDetail> importDetails;
-    private String note;
+    private String message;
 
 }

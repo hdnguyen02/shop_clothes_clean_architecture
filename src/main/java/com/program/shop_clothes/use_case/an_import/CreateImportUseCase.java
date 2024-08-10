@@ -7,6 +7,6 @@ import java.util.Map;
 public interface CreateImportUseCase {
 
     // mapImport { idProductSize, quantity }
-    Import execute(Map<String, Integer> mapImports);
+    Import execute(Map<String, Integer> mapImportDetails, String message);
 
 }

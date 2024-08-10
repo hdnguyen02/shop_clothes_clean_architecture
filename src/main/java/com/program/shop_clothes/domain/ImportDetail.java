@@ -7,7 +7,6 @@ import lombok.*;
 @Setter
 public class ImportDetail extends BaseDomain {
 
-    private Import anImport;
     private ProductSize productSize;
     private int quantityProduct;
 

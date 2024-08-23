@@ -9,6 +9,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 public class UserEntity {
 
     @Id
@@ -45,4 +46,6 @@ public class UserEntity {
 
     @Column(nullable = false)
     private boolean isEnabled;
+
+
 }

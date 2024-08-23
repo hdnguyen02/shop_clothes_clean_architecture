@@ -4,6 +4,6 @@ import com.program.shop_clothes.domain.CartItem;
 
 import java.util.List;
 
-public interface GetAllCartItemUseCase {
-    List<CartItem> execute();
+public interface GetAllCartItemByUsernameUserUseCase {
+    List<CartItem> execute(String usernameUser);
 }

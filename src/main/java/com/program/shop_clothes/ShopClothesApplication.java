@@ -1,7 +1,6 @@
 package com.program.shop_clothes;
 
-import com.program.shop_clothes.use_case.category.InitCategoryUseCase;
-import com.program.shop_clothes.use_case.size.InitSizeUseCase;
+import com.program.shop_clothes.infrastructure.service.InitDB;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,10 +15,9 @@ public class ShopClothesApplication {
 	}
 
 	@Bean
-	CommandLineRunner commandLineRunner(InitSizeUseCase initSizeUseCase, InitCategoryUseCase initCategoryUseCase) {
+	CommandLineRunner commandLineRunner(InitDB initDB) {
 		return arg -> {
-			initSizeUseCase.execute();
-			initCategoryUseCase.execute();
+			initDB.execute();
 		};
 	}
 
